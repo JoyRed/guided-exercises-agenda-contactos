@@ -1,48 +1,46 @@
 
   //Traer elementos del HTML
-  
-  
-  var loadPage = function () {
-    
-  };
+  var $nameInput = $('#name-input');
+  var $phoneInput =$('#phone-input');
 
-  var paintContactsInHTML = function(contact) {
-   
-    /* Crear elementos con DOM html al publicar contacto */
-     
-    
-    //Asignando atributos y/o eventos
-    
+//definir a que elemento le vas a dar para que ejecuten la funcion de validatecontact
+  function loadPage() {
+    $('.modal').modal();
+    $nameInput.keyup(validateContact);
+    $phoneInput.keyup(validateContact);
+  } //
 
-    /* Asignando valores a los elementos*/
-    
+//En esta funcion tenemos que validar que el usuario ingrese datos y no valores vacios
+  function validateContact() {
+    if($(this).val().trim(.lenght > 0){
+      $('#add-contact').removeAttr('disabled');
+    }else{
+      $('#add-contact').attr('disabled',true);
+    }
+  }
 
-    //Agregamos lo que creamos con el DOM a un elemento existente del HTML
-    
-  };
 
+
+    //Las siguientes lineas toman el valor que el usuario agrega en los inputs y los guardan en variables
+    //Con las variables separadas que obtuvimos creamos una estructura de datos unica, un objeto por cada contacto
+    /*Agregamos el contacto a nuestra data (arreglo declarado) para poderla filtrar y eliminar posteriormente*/
+    //La siguiente funcion se encarga de pintar los contactos en el html
+    /* Limpiando valores de formulario*/
   var addContact = function (e) {
     e.preventDefault();
-    //Las siguientes lineas toman el valor que el usuario agrega en los inputs y los guardan en variables
-    
 
-    //Con las variables separadas que obtuvimos creamos una estructura de datos unica, un objeto por cada contacto
-    
-
-    /*Agregamos el contacto a nuestra data (arreglo declarado) para poderla filtrar y eliminar posteriormente*/
-    
-    //La siguiente funcion se encarga de pintar los contactos en el html
-    
-    /* Limpiando valores de formulario*/
-    
   };
 
-  
 
+  var paintContactsInHTML = function(contact) {
 
-  var validateContact = function () {
-    //En esta funcion tenemos que validar que el usuario ingrese datos y no valores vacios
+    /* Crear elementos con DOM html al publicar contacto */
+    //Asignando atributos y/o eventos
+    /* Asignando valores a los elementos*/
+    //Agregamos lo que creamos con el DOM a un elemento existente del HTML
+
   };
+
 
 
   var filterContacts = function() {
